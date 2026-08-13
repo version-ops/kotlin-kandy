@@ -5,7 +5,7 @@ plugins {
 }
 
 allprojects {
-    group = "io.github.waveskimmer.kotlin"
+    group = "io.github.version-ops"
     version = "0.1.0-SNAPSHOT"
 
     repositories {

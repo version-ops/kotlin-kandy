@@ -3,8 +3,8 @@ plugins {
 
 }
 
-rootProject.name = "kotlin-extensions"
-include(":kotlin-extensions")
+rootProject.name = "kotlin-kandy"
+include(":kotlin-kandy")
 
 
 fun ProjectDescriptor.applyGradleKtsBuildFileNames() {
