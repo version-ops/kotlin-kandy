@@ -1,7 +1,10 @@
 package io.github.version.ops.kandy
 
+import io.github.version.ops.kandy.Maybe.Empty
+
 /**
- * tl;dr is to hide the imperative coding that kotlin forces on the user
+ * tl;dr is to hide the imperative coding that kotlin forces on the user to
+ * do continues or early returns.
  */
 object Collections {
 

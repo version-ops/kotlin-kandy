@@ -1,5 +1,8 @@
 package io.github.version.ops.kandy
 
+import io.github.version.ops.kandy.Maybe.Companion.toMaybe
+import io.github.version.ops.kandy.Maybe.Empty
+import io.github.version.ops.kandy.Maybe.Some
 import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.core.spec.style.FunSpec
 import io.kotest.matchers.shouldBe
@@ -53,7 +56,7 @@ class MaybeTest : FunSpec({
             else -> Empty
         }
         when (y) {
-            Some(x) -> x.value shouldBe "true"
+            is Some -> x.value shouldBe "true"
             else -> y is Empty
         }
     }
@@ -65,5 +68,17 @@ class MaybeTest : FunSpec({
         shouldThrow<NoSuchElementException> {
             Empty.get()
         }
+    }
+
+    test("getOrNull() works") {
+        Some("hello").getOrNull() shouldBe "hello"
+        Empty.getOrNull() shouldBe null
+    }
+
+    test( "getOrElse(value) works") {
+        val y = Some("hello")
+            y.getOrElse("hello") shouldBe "hello"
+        val x = (null as String?).toMaybe()
+            x.getOrElse("goodbye") shouldBe "goodbye"
     }
 })

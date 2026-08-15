@@ -4,7 +4,7 @@ plugins {
 }
 
 rootProject.name = "kotlin-kandy"
-include(":kotlin-kandy")
+include(":kandy-core")
 
 
 fun ProjectDescriptor.applyGradleKtsBuildFileNames() {
