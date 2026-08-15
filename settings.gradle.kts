@@ -1,10 +1,13 @@
-
-plugins {
-
-}
-
 rootProject.name = "kotlin-kandy"
 include(":kandy-core")
+
+pluginManagement {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
 
 
 fun ProjectDescriptor.applyGradleKtsBuildFileNames() {
