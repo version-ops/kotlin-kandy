@@ -56,7 +56,7 @@ class MaybeTest : FunSpec({
             else -> Empty
         }
         when (y) {
-            is Some -> x.value shouldBe "true"
+            is Some -> y.value shouldBe "true"
             else -> y is Empty
         }
     }
